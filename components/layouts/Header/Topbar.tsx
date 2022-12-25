@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { FiBell } from 'react-icons/fi'
 import { BsMoon, BsSun } from 'react-icons/bs'
 import { useTheme } from 'next-themes';
+import { motion, AnimatePresence } from "framer-motion"
 
 import avatar from '../../../public/avatar.jpg'
 import Notification from './Notification'
@@ -78,7 +79,9 @@ const Topbar = () => {
         <button ref={btnNotifRef} className={`btn btn-icon topbar-btn ${showDropdownTopbar.notification ? 'active' : ''}`} onClick={() => toggleDropdownTopbar('notification')}> 
           <FiBell className='text-white text-lg'/>
         </button>
-        { showDropdownTopbar.notification && <Notification setShowDropdownTopbar={setShowDropdownTopbar} btnRef={btnNotifRef}/>}
+          <AnimatePresence>
+            { showDropdownTopbar.notification && <Notification setShowDropdownTopbar={setShowDropdownTopbar} btnRef={btnNotifRef}/>}
+        </AnimatePresence>
       </div>
 
       
@@ -101,7 +104,9 @@ const Topbar = () => {
         <div className='btn btn-icon w-[33px] h-[33px] md:btn-icon-size rounded-lg bg-white overflow-hidden'> 
           <Image src={avatar} alt="avatar" />
         </div>
-        { showDropdownTopbar.userAccount && <UserAccountMenu setShowDropdownTopbar={setShowDropdownTopbar} divRef={divUserAccountRef}/> }
+        <AnimatePresence>
+          { showDropdownTopbar.userAccount && <UserAccountMenu setShowDropdownTopbar={setShowDropdownTopbar} divRef={divUserAccountRef}/> }
+        </AnimatePresence>
       </div>
 
     </div>

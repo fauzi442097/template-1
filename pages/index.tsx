@@ -6,6 +6,8 @@ import PageTitle from '../components/layouts/Toolbar/PageTitle'
 import Breadcrumb from '../components/layouts/Toolbar/Breadcrumb'
 import PageAction from '../components/layouts/Toolbar/PageAction'
 
+import { motion } from 'framer-motion'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,29 +23,29 @@ export default function Home() {
       </Head>
 
         {/* Toolbar */}
-        <Toolbar>
-          <PageTitle> 
-            <h1 className='page-title'> Dashboard </h1>
-            <Breadcrumb/>
-          </PageTitle>
-          <PageAction>
-            Action
-          </PageAction>
-        </Toolbar>
+          <Toolbar>
+            <PageTitle> 
+              <h1 className='page-title'> Dashboard </h1>
+              <Breadcrumb/>
+            </PageTitle>
+            <PageAction>
+              Action
+            </PageAction>
+          </Toolbar>
 
-        {/* Container */}
-        <div className='flex flex-grow flex-shrink-0'> 
-          <div className='w-full lg:py-0 lg:px-[30px] m-auto container-fluid '> 
-            <div className='bg-white py-5 px-9 rounded-lg'> 
-              <h1> h1 </h1>
-              <h2> h2 </h2>
-              <h3> h3 </h3>
-              <h4> h4 </h4>
-              <h5> h5 </h5>
-              <h6> h6 </h6>
+          {/* Container */}
+          <div className='flex flex-grow flex-shrink-0'> 
+            <div className='w-full lg:py-0 lg:px-[30px] m-auto container-fluid '> 
+              <div className='bg-white py-5 px-9 rounded-lg'> 
+                <h1> h1 </h1>
+                <h2> h2 </h2>
+                <h3> h3 </h3>
+                <h4> h4 </h4>
+                <h5> h5 </h5>
+                <h6> h6 </h6>
+              </div>
             </div>
           </div>
-        </div>
     </>
   )
 }

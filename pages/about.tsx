@@ -1,5 +1,11 @@
 import Head from 'next/head'
 import React from 'react'
+import Breadcrumb from '../components/layouts/Toolbar/Breadcrumb'
+import Toolbar from '../components/layouts/Toolbar/Index'
+import PageAction from '../components/layouts/Toolbar/PageAction'
+import PageTitle from '../components/layouts/Toolbar/PageTitle'
+
+import { motion } from 'framer-motion'
 
 function about() {
   return (
@@ -11,11 +17,25 @@ function about() {
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-     {/* Toolbar */}
-        <div className='flex items-center w-full justify-between mb-5'> Toolbar </div>
-        
-        {/* Container */}
-        <div> About </div>
+          {/* Toolbar */}
+          <Toolbar>
+            <PageTitle> 
+              <h1 className='page-title'> About </h1>
+              <Breadcrumb/>
+            </PageTitle>
+            <PageAction>
+              Action
+            </PageAction>
+          </Toolbar>
+
+          {/* Container */}
+          <div className='flex flex-grow flex-shrink-0'> 
+            <div className='w-full lg:py-0 lg:px-[30px] m-auto container-fluid '> 
+              <div className='bg-white py-5 px-9 rounded-lg'> 
+                about page
+              </div>
+            </div>
+          </div>
     </>
   )
 }
