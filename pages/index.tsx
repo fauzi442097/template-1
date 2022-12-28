@@ -7,6 +7,8 @@ import Breadcrumb from '../components/layouts/Toolbar/Breadcrumb'
 import PageAction from '../components/layouts/Toolbar/PageAction'
 
 import { motion } from 'framer-motion'
+import { FiSave } from 'react-icons/fi'
+import Button from '../components/Forms/Button'
 
 
 
@@ -25,25 +27,94 @@ export default function Home() {
         {/* Toolbar */}
           <Toolbar>
             <PageTitle> 
-              <h1 className='page-title'> Dashboard </h1>
-              <Breadcrumb/>
+              <h1 className='page-title'> Button </h1>
             </PageTitle>
-            <PageAction>
-              Action
-            </PageAction>
           </Toolbar>
 
           {/* Container */}
           <div className='flex flex-grow flex-shrink-0'> 
-            <div className='w-full lg:py-0 lg:px-[30px] m-auto container-fluid '> 
-              <div className='bg-white py-5 px-9 rounded-lg'> 
-                <h1> h1 </h1>
-                <h2> h2 </h2>
-                <h3> h3 </h3>
-                <h4> h4 </h4>
-                <h5> h5 </h5>
-                <h6> h6 </h6>
-              </div>
+            <div className='w-full lg:py-0 lg:px-[30px] m-auto container-fluid flex flex-wrap gap-4'> 
+
+                <div className='bg-white py-5 px-9 rounded-xl flex-1'> 
+                  <p className='text-base text-dark'> Button Sizing </p>
+                  <div className='flex items-center gap-2'>
+                    <button className='btn btn-primary btn-sm'> 
+                      Simpan
+                    </button>
+                    <button className='btn btn-primary'> 
+                      Simpan
+                    </button>
+                    <button className='btn btn-primary btn-lg'> 
+                      Simpan
+                    </button>
+                    <button className='btn btn-primary btn-xl'> 
+                      Simpan
+                    </button>
+                  </div>
+                  <div className='flex flex-col gap-1 my-2'>
+                    <span> Small: 12px (btn-sm)</span>
+                    <span> Small: 14px (btn-md)</span>
+                    <span> Small: 16px (btn-lg)</span>
+                    <span> Small: 18px (btn-xl)</span>
+                  </div>
+                </div>
+
+                <div className='bg-white py-5 px-9 rounded-xl flex-1'> 
+                  <div>
+                    <p className='text-base text-dark'> Button Styling </p>
+
+                    <div>
+                      <span className='mb-1 block'> Button Primary </span>
+                      <div className='flex items-center gap-2'>
+                        <Button.Primary> Primary </Button.Primary>
+                        <Button.LightPrimary> Light </Button.LightPrimary>
+                        <Button.OutlinePrimary> Outline </Button.OutlinePrimary>
+                        <Button.Primary disabled="disabled"> Primary </Button.Primary>
+                        <Button.LightPrimary disabled="disabled"> Light </Button.LightPrimary>
+                        <Button.OutlinePrimary disabled="disabled"> Outline </Button.OutlinePrimary>
+                      </div>
+                    </div>
+
+                    <div className='my-4'>
+                      <span className='mb-1 block'> Button Secondary </span>
+                      <div className='flex items-center gap-2'>
+                        <Button.Secondary> Secondary </Button.Secondary>
+                        <Button.LightTextPrimary> Secondary </Button.LightTextPrimary>
+                        <Button.Secondary disabled="disabled"> Secondary </Button.Secondary>
+                        <Button.LightTextPrimary disabled="disabled"> Secondary </Button.LightTextPrimary>
+                        
+                      </div>
+                    </div>
+
+                    <div className='my-4'>
+                      <span className='mb-1 block'> Button Light </span>
+                      <div className='flex items-center gap-2'>
+                        <Button.Light> Light </Button.Light>
+                        <Button.Light disabled="disabled"> Light </Button.Light>
+                      </div>
+                    </div>
+
+                    <div>
+                      <span className='mb-1 block'> Button Icon </span>
+                      <div className='flex items-center gap-2'>
+                        <Button.Icon className="btn-primary"> <FiSave/> </Button.Icon>
+                        <Button.Icon className="btn-light-primary"> <FiSave/> </Button.Icon>
+                        <Button.Icon className="btn-outline-primary"> <FiSave/> </Button.Icon>
+
+                        <Button.Icon className="btn-secondary"> <FiSave/> </Button.Icon>
+                        <Button.Icon className="btn-secondary text-primary enabled:hover:bg-btn-light-primary enabled:hover:border-border-btn-light-primary"> <FiSave/> </Button.Icon>
+                        <Button.Icon className="btn-outline-secondary"> <FiSave/> </Button.Icon>
+                                                
+                      </div>
+                    </div>
+             
+                  </div>
+                </div>
+                  
+                  
+                  
+                
+              
             </div>
           </div>
     </>
