@@ -41,7 +41,9 @@ const ButtonLight = ({ children, className, ...props } : any) => {
 
 const ButtonLightTextPrimary = ({ children, className, ...props } : any) => {
    return (
-      <ButtonInitial type="btn-secondary text-primary enabled:hover:bg-btn-light-primary enabled:hover:border-border-btn-light-primary" className={className} {...props}> {children} </ButtonInitial>
+      <ButtonInitial 
+            type="btn-light-text-primary" 
+            className={className} {...props}> {children} </ButtonInitial>
    )
 }
 

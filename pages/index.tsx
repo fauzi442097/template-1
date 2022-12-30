@@ -27,7 +27,7 @@ export default function Home() {
         {/* Toolbar */}
           <Toolbar>
             <PageTitle> 
-              <h1 className='page-title'> Button </h1>
+              <h1 className='page-title dark:text-slate-300'> Button </h1>
             </PageTitle>
           </Toolbar>
 
@@ -35,8 +35,8 @@ export default function Home() {
           <div className='flex flex-grow flex-shrink-0'> 
             <div className='w-full lg:py-0 lg:px-[30px] m-auto container-fluid flex flex-wrap gap-4'> 
 
-                <div className='bg-white py-5 px-9 rounded-xl flex-1'> 
-                  <p className='text-base text-dark'> Button Sizing </p>
+                <div className='bg-white dark:bg-dark-dept-1 dark:border dark:border-[#2B2B40] py-5 px-9 rounded-xl flex-1'> 
+                  <p className='text-base text-dark dark:text-slate-300'> Button Sizing </p>
                   <div className='flex items-center gap-2'>
                     <button className='btn btn-primary btn-sm'> 
                       Simpan
@@ -59,19 +59,16 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className='bg-white py-5 px-9 rounded-xl flex-1'> 
+                <div className='bg-white dark:bg-dark-dept-1 dark:border dark:border-[#2B2B40] py-5 px-9 rounded-xl flex-1'> 
                   <div>
-                    <p className='text-base text-dark'> Button Styling </p>
+                    <p className='text-base text-dark dark:text-slate-300'> Button Styling </p>
 
                     <div>
                       <span className='mb-1 block'> Button Primary </span>
                       <div className='flex items-center gap-2'>
                         <Button.Primary> Primary </Button.Primary>
-                        <Button.LightPrimary> Light </Button.LightPrimary>
-                        <Button.OutlinePrimary> Outline </Button.OutlinePrimary>
-                        <Button.Primary disabled="disabled"> Primary </Button.Primary>
-                        <Button.LightPrimary disabled="disabled"> Light </Button.LightPrimary>
-                        <Button.OutlinePrimary disabled="disabled"> Outline </Button.OutlinePrimary>
+                        <Button.LightPrimary> Light Primary </Button.LightPrimary>
+                        <Button.OutlinePrimary> Outline Primary </Button.OutlinePrimary>
                       </div>
                     </div>
 
@@ -80,9 +77,6 @@ export default function Home() {
                       <div className='flex items-center gap-2'>
                         <Button.Secondary> Secondary </Button.Secondary>
                         <Button.LightTextPrimary> Secondary </Button.LightTextPrimary>
-                        <Button.Secondary disabled="disabled"> Secondary </Button.Secondary>
-                        <Button.LightTextPrimary disabled="disabled"> Secondary </Button.LightTextPrimary>
-                        
                       </div>
                     </div>
 
@@ -90,7 +84,6 @@ export default function Home() {
                       <span className='mb-1 block'> Button Light </span>
                       <div className='flex items-center gap-2'>
                         <Button.Light> Light </Button.Light>
-                        <Button.Light disabled="disabled"> Light </Button.Light>
                       </div>
                     </div>
 
@@ -102,11 +95,23 @@ export default function Home() {
                         <Button.Icon className="btn-outline-primary"> <FiSave/> </Button.Icon>
 
                         <Button.Icon className="btn-secondary"> <FiSave/> </Button.Icon>
-                        <Button.Icon className="btn-secondary text-primary enabled:hover:bg-btn-light-primary enabled:hover:border-border-btn-light-primary"> <FiSave/> </Button.Icon>
-                        <Button.Icon className="btn-outline-secondary"> <FiSave/> </Button.Icon>
-                                                
+                        <Button.Icon className="btn-light-text-primary"> <FiSave/> </Button.Icon>
+                        <Button.Icon className="btn-outline-secondary"> <FiSave/> </Button.Icon>               
                       </div>
                     </div>
+
+                    <div className='my-4'>
+                      <span className='mb-1 block'> Button Disabled </span>
+                      <div className='flex items-center gap-2'>
+                        <Button.Primary disabled="disabled"> Primary </Button.Primary>
+                        <Button.LightPrimary disabled="disabled"> Light Primary </Button.LightPrimary>
+                        <Button.OutlinePrimary disabled="disabled"> Outline Primary </Button.OutlinePrimary>
+                        <Button.Secondary disabled="disabled"> Secondary </Button.Secondary>
+                        <Button.LightTextPrimary disabled="disabled"> Secondary </Button.LightTextPrimary>
+                        <Button.Light disabled="disabled"> Light </Button.Light>
+                      </div>
+                    </div>
+         
              
                   </div>
                 </div>

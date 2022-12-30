@@ -77,7 +77,7 @@ const Topbar = () => {
       {/* Notification */}
       <div className='topbar-item relative'> 
         <button ref={btnNotifRef} className={`btn btn-icon topbar-btn ${showDropdownTopbar.notification ? 'active' : ''}`} onClick={() => toggleDropdownTopbar('notification')}> 
-          <FiBell className='text-white text-lg'/>
+          <FiBell className='topbar-icon'/>
         </button>
           <AnimatePresence>
             { showDropdownTopbar.notification && <Notification setShowDropdownTopbar={setShowDropdownTopbar} btnRef={btnNotifRef}/>}
@@ -88,9 +88,9 @@ const Topbar = () => {
       {/* Theme Mode */}
       <div className='topbar-item group'> 
         <button className={`btn btn-icon topbar-btn`} onClick={() => changeTheme()}> 
-          { currentTheme == 'light' ? <BsMoon className='text-white text-lg'/> : <BsSun className='text-white text-lg'/>}
+          { currentTheme == 'light' ? <BsMoon className='topbar-icon'/> : <BsSun className='topbar-icon'/>}
         </button>
-        <span className='text-xs bg-white p-2 rounded-lg absolute top-12 md:top-16 right-0 shadow font-inter-light w-20 text-center dark:bg-dark-depth-2 transition duration-300 -scale-0 group-hover:scale-100 '> 
+        <span className='text-xs bg-white p-2 rounded-lg absolute top-12 md:top-16 right-0 shadow dark:shadow-none font-inter-light w-24 text-center dark:bg-dark-dept-1 transition duration-300 -scale-0 group-hover:scale-100 '> 
           {currentTheme == 'dark' ? 'Light mode' : 'Dark mode'}
         </span>
       </div>
@@ -98,11 +98,11 @@ const Topbar = () => {
       {/* User Account */}
       <div ref={divUserAccountRef} className='flex items-center lg:ml-4 lg:mr-4 cursor-pointer' onClick={() => toggleDropdownTopbar('userAccount')}> 
         <div className='lg:flex lg:flex-col items-end mr-2 lg:mr-4 hidden'>
-          <p className='mb-0 text-white'> Ahmad Fauzi </p>
-          <span className='text-xs text-white font-inter-light'> Administrator </span>
+          <p className='m-0 text-white dark:text-gray-300 text-base'> Ahmad Fauzi </p>
+          <span className='text-xs text-white font-inter-light dark:text-gray-400'> Administrator </span>
         </div>
-        <div className='btn btn-icon w-[33px] h-[33px] md:btn-icon-size rounded-lg bg-white overflow-hidden'> 
-          <Image src={avatar} alt="avatar" />
+        <div className='w-[33px] h-[33px] md:btn-icon-size-account rounded-lg bg-white overflow-hidden'> 
+          <Image src={avatar} alt="avatar" className='object-cover'/>
         </div>
         <AnimatePresence>
           { showDropdownTopbar.userAccount && <UserAccountMenu setShowDropdownTopbar={setShowDropdownTopbar} divRef={divUserAccountRef}/> }

@@ -7,7 +7,7 @@ import Topbar from './Topbar';
 const Header = () => {
 
   return (
-    <div className='header bg-primary dark:bg-primary-dark'> 
+    <div className='header'> 
       <div className='flex justify-between items-stretch w-full py-0 px-[15px] lg:px-[30px]'>
         {/* Logo */}
         <div className='flex justify-between items-center mr-5'> 

@@ -31,7 +31,7 @@ function about() {
           {/* Container */}
           <div className='flex flex-grow flex-shrink-0'> 
             <div className='w-full lg:py-0 lg:px-[30px] m-auto container-fluid '> 
-              <div className='bg-white py-5 px-9 rounded-lg'> 
+              <div className='bg-white dark:bg-dark-depth-1 py-5 px-9 rounded-lg'> 
                 about page
               </div>
             </div>
