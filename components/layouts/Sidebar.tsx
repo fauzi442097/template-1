@@ -4,48 +4,7 @@ import MenuItem from './MenuItem'
 
 import { AiOutlineDashboard } from 'react-icons/ai'
 import { FiUsers, FiSettings, FiCrosshair } from 'react-icons/fi'
-
-
-const Menus = [
-   {
-      id: 1,
-      title: 'Dashboard',
-      url: '/',
-      icon: <AiOutlineDashboard />
-   },
-   {
-      id: 2,
-      title: 'Users',
-      url: '/users',
-      icon: <FiUsers />
-   },
-   {
-      id: 3,
-      title: 'Settings',
-      url: '/settings',
-      icon: <FiSettings />,
-      subMenu: [
-         {
-            title: 'Account',
-            url: '/settings/account'
-         },
-         {
-            title: 'Payment',
-            url: '/settings/payment'
-         },
-         {
-            title: 'Role',
-            url: '/settings/role'
-         }
-      ]
-   },
-   {
-      id: 4,
-      title: 'About',
-      url: '/about',
-      icon: <FiCrosshair />,
-   }
-];
+import { Menus } from '../../helper/menu'
 
 
 const Sidebar = () => {

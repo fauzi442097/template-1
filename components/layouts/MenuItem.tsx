@@ -5,6 +5,7 @@ import { RxDotFilled } from 'react-icons/rx'
 import { FiChevronDown } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from "framer-motion"
+import { useGlobalContext } from '../../context'
 
 interface MenuItemProps {
   icon : any,
@@ -94,7 +95,7 @@ const SubMenu = ({ items }: any ) => {
                 <MenuLink 
                   key={index}
                   icon={<RxDotFilled />}
-                  url={value.ur}
+                  url={value.url}
                   title={value.title}
                 />
               </motion.div>
@@ -110,10 +111,12 @@ const MenuLink = ({ url, icon, title } : {
   title: String
 }) => {
 
+  const { setActiveSidebar } = useGlobalContext();
+
   const router = useRouter();
   const activeClass = router.pathname == url ? 'font-inter-semibold' : '';
   return (
-    <Link href={`${url}`} className={`menu-link ${activeClass}`}>
+    <Link href={`${url}`} className={`menu-link ${activeClass}`} onClick={() => setActiveSidebar(false)}>
       <span className='menu-icon'> {icon} </span>
       <span className='menu-title'> {title} </span>
     </Link>

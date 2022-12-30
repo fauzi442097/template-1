@@ -206,6 +206,34 @@
 	.btn-icon {
 		@apply text-lg px-2;
 	}
+
+	.backdrop {
+		@apply inset-0 fixed dark:bg-dark/50 overflow-hidden backdrop-blur dark:backdrop-blur-none;
+	}
+
+	.alert-container {
+		@apply relative transform overflow-hidden rounded-lg bg-white dark:bg-dark-dept-1 text-left shadow-xl dark:shadow-none transition-all sm:my-8 sm:max-w-lg w-[500px];
+	}
+
+	.alert-content {
+		@apply dark:bg-dark-dept-1 bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4;
+	}
+
+	.alert-action {
+		@apply dark:bg-dark-dept-2 px-4 py-3 flex justify-center sm:justify-end sm:px-6 gap-2;
+	}
+
+	.text-danger {
+		@apply text-red-500 dark:text-red-700;
+	}
+
+	.text-success {
+		@apply text-green-500 dark:text-green-600;
+	}
+
+	.text-warning {
+		@apply text-yellow-500 dark:text-yellow-600;
+	}
 }
 
 @layer utilities {
