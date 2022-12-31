@@ -19,19 +19,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-
-          {/* Container */}
-          <div className='flex flex-grow flex-shrink-0'> 
-            <div className='w-full lg:py-0 lg:px-[30px] m-auto container-fluid flex flex-wrap gap-4'> 
-
-                <div className='bg-white dark:bg-dark-dept-1 dark:border dark:border-[#2B2B40] py-5 px-9 rounded-xl flex-1'> 
-                  Dashboard
-                </div>
-
-                  
-                      
-            </div>
-          </div>
+        <div className='bg-white dark:bg-dark-dept-1 dark:border dark:border-[#2B2B40] py-5 px-9 rounded-xl flex-1'> 
+          Dashboard
+        </div>
     </>
   )
 }

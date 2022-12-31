@@ -8,6 +8,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        "modal-sm": "300px",
+        "modal-lg": "800px",
+        "modal-xl": "1140px",
+        "modal-base": "500px"
+      },
       screens: {
         lg: '991px',
       },
@@ -18,7 +24,9 @@ module.exports = {
         "border-light": "#F4F4F4",
         "border-dark": "#2B2B40",
         "border-btn-light-primary": "#ffedec",
-        "border-btn-hover-light-primary": "#ffdedb"
+        "border-btn-hover-light-primary": "#ffdedb",
+        "depth-1": "#2A2A2A",
+        "depth-2": "#3d3d3d",
       },
       backgroundColor: {
         "light" : "#F5F7FB",

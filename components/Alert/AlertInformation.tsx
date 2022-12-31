@@ -1,4 +1,4 @@
-import Button from "../../Button";
+import Button from "../Button";
 import Alert, { ErrorIcon, SuccessIcon, WarningIcon } from "./Alert";
 
 interface typesParamAlert {

@@ -19,7 +19,7 @@ const PageInfo = () => {
     return (
       <Toolbar>
           <PageTitle> 
-            <h1 className='page-title dark:text-slate-300'> {pageTitle} </h1>
+            <h1 className='page-title dark:text-slate-400'> {pageTitle} </h1>
             <Breadcrumbs/>
           </PageTitle>
         </Toolbar>

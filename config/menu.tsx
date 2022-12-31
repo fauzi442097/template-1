@@ -7,37 +7,47 @@ export const Menus = [
       title: 'Dashboard',
       url: '/',
       icon: <AiOutlineDashboard />,
-      breadcrumb: 'Dashboard'
    },
    {
       id: 2,
       title: 'Users',
       url: '/users',
       icon: <FiUsers />,
-      breadcrumb: 'Users'
    },
    {
       id: 3,
       title: 'Component',
       url: '/',
       icon: <FiSettings />,
-      breadcrumb: 'Component',
       subMenu: [
          {
             title: 'Alert',
             url: '/component/alert',
-            breadcrumb: 'Alert',
          },
-            {
+         {
+            title: 'Badge',
+            url: '/component/badge',
+         },
+         {
             title: 'Button',
             url: '/component/button',
-            breadcrumb: 'Button',
+         },
+         {
+            title: 'Card',
+            url: '/component/card',
          },
          {
             title: 'Font',
             url: '/component/font',
-            breadcrumb: 'Font',
-         }
+         },
+         {
+            title: 'Modal',
+            url: '/component/modal',
+         },
+         {
+            title: 'Toast',
+            url: '/component/toast',
+         },
       ]
    },
    {
@@ -45,6 +55,5 @@ export const Menus = [
       title: 'About',
       url: '/about',
       icon: <FiCrosshair />,
-      breadcrumb: 'About',
    }
 ];
