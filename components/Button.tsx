@@ -53,6 +53,12 @@ const ButtonIcon = ({ children, className, ...props } : any) => {
    )
 }
 
+const ButtonClean = ({ children, className, ...props } : any) => {
+   return (
+      <ButtonInitial type="btn" className={className} {...props}> {children} </ButtonInitial>
+   )
+}
+
 
 const Button = {
    Primary: ButtonPrimary,
@@ -61,7 +67,8 @@ const Button = {
    Secondary: ButtonSecondary,
    Light: ButtonLight,
    LightTextPrimary: ButtonLightTextPrimary,
-   Icon: ButtonIcon
+   Icon: ButtonIcon,
+   Clean: ButtonClean
 }
 
 

@@ -31,8 +31,8 @@ const UserAccountMenu = ({setShowDropdownTopbar, divRef, className, ...props} : 
                   <Image src={avatar} alt="avatar" className='bg-cover'/>
                </div>
                <div className='flex flex-col overflow-hidden'>
-                  <p className='m-0  dark:text-gray-300 text-base'> Ahmad Fauzi </p>
-                  <p className='m-0 text-xs break-all'>fauzi442097@gmail.com </p>
+                  <p className='m-0  dark:text-gray-400 text-base font-inter-medium'> Ahmad Fauzi </p>
+                  <p className='m-0 text-xs break-all font-inter-light'>fauzi442097@gmail.com </p>
                </div>
             </div>
          </div>
@@ -55,7 +55,7 @@ const UserAccountMenu = ({setShowDropdownTopbar, divRef, className, ...props} : 
 
 const ItemUserAccountMenu = ({ children } : any ) => {
    return (
-      <li className='flex items-center gap-2 px-3 py-2 rounded-md hover:bg-light dark:hover:bg-[#424242] hover:text-primary dark:hover:text-red-700 hover:cursor-pointer transition group'> 
+      <li className='flex items-center gap-2 px-3 py-2 rounded-md hover:bg-light dark:hover:bg-[#424242] hover:text-primary dark:hover:text-red-700 hover:font-inter-semibold hover:cursor-pointer transition group'> 
          {children}
       </li>
    )

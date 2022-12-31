@@ -28,6 +28,16 @@ module.exports = {
         "btn-light-primary": "#ffedec",
         "btn-hover-light-primary": "#ffdedb",
         "dark-light-primary": "#b2cebf",
+      },
+       fontFamily: {
+        "inter-thin": ['var(--font-inter-thin)'],
+        "inter-extralight": ['var(--font-inter-extralight)'],
+        "inter-light": ['var(--font-inter-light)'],
+        "inter": ['var(--font-inter-regular)'],
+        "inter-medium": ['var(--font-inter-medium)'],
+        "inter-semibold": ['var(--font-inter-semibold)'],
+        "inter-bold": ['var(--font-inter-bold)'],
+        "inter-extrabold": ['var(--font-inter-extrabold)'],
       }
     },
   },

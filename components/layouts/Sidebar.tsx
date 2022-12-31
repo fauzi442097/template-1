@@ -4,7 +4,7 @@ import MenuItem from './MenuItem'
 
 import { AiOutlineDashboard } from 'react-icons/ai'
 import { FiUsers, FiSettings, FiCrosshair } from 'react-icons/fi'
-import { Menus } from '../../helper/menu'
+import { Menus } from '../../config/menu'
 
 
 const Sidebar = () => {

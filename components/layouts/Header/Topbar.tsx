@@ -98,7 +98,7 @@ const Topbar = () => {
       {/* User Account */}
       <div ref={divUserAccountRef} className='flex items-center lg:ml-4 lg:mr-4 cursor-pointer' onClick={() => toggleDropdownTopbar('userAccount')}> 
         <div className='lg:flex lg:flex-col items-end mr-2 lg:mr-4 hidden'>
-          <p className='m-0 text-white dark:text-gray-300 text-base'> Ahmad Fauzi </p>
+          <p className='m-0 text-white dark:text-gray-400 text-base font-inter-medium'> Ahmad Fauzi </p>
           <span className='text-xs text-white font-inter-light dark:text-gray-400'> Administrator </span>
         </div>
         <div className='w-[33px] h-[33px] md:btn-icon-size-account rounded-lg bg-white overflow-hidden'> 

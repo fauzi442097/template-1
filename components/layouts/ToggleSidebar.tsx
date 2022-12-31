@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { Menus } from '../../helper/menu'
+import { Menus } from '../../config/menu'
 import { useClickOutside } from './Header/Topbar';
 import MenuItem from './MenuItem'
 import { motion } from 'framer-motion'

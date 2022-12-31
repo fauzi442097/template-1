@@ -1,33 +1,53 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 import Content from './Content'
 import Header from './Header/Index'
 import Sidebar from './Sidebar'
-import { Inter } from '@next/font/google';
+import TagHead from './TagHead'
+import Breadcrumbs from './Toolbar/Breadcrumb'
+import Toolbar from './Toolbar/Index'
+import PageTitle from './Toolbar/PageTitle'
+import { StringHelper } from '../../helper/helper'
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['500'],
-  variable: '--font-inter',
-})
+const PageInfo = () => {
+    const router = useRouter();
+    console.log(router);
+    const path = router.asPath.split("?")[0];
+    const pathName = String(path.split('/').pop());
+    const pageTitle = pathName == '' ? 'Dashboard' : StringHelper.Capitalize(pathName);
+
+    return (
+      <Toolbar>
+          <PageTitle> 
+            <h1 className='page-title dark:text-slate-300'> {pageTitle} </h1>
+            <Breadcrumbs/>
+          </PageTitle>
+        </Toolbar>
+    )
+}
 
 const Layout = ({ children } : {
    children: React.ReactNode
 }) => {
 
-
   return (
-    <div className={`${inter.variable} font-inter-light flex flex-col flex-1`}>
-      <div className='flex flex-row flex-1 '> 
-         <Sidebar/>
-         <div className='wrapper'> 
-         <Header/>
-         <Content>
-            {children}
-         </Content>
-         {/* <Footer/> */}
-         </div>
-      </div>
-   </div>
+    <>
+      <TagHead/>
+      <div className={`flex flex-col flex-1`}>
+        <div className='flex flex-row flex-1 '> 
+          <Sidebar/>
+          <div className='wrapper'> 
+          <Header/>
+          <Content>
+              {/* Toolbar */}
+              <PageInfo />
+              {children}
+          </Content>
+          {/* <Footer/> */}
+          </div>
+        </div>
+    </div>
+    </>
   )
 }
 

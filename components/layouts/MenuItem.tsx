@@ -117,7 +117,7 @@ const MenuLink = ({ url, icon, title } : {
   const activeClass = router.pathname == url ? 'font-inter-semibold' : '';
   return (
     <Link href={`${url}`} className={`menu-link ${activeClass}`} onClick={() => setActiveSidebar(false)}>
-      <span className='menu-icon'> {icon} </span>
+      <span className={`menu-icon`}> {icon} </span>
       <span className='menu-title'> {title} </span>
     </Link>
   )
