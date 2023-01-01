@@ -1,9 +1,5 @@
-import Link from 'next/link'
 import React from 'react'
 import MenuItem from './MenuItem'
-
-import { AiOutlineDashboard } from 'react-icons/ai'
-import { FiUsers, FiSettings, FiCrosshair } from 'react-icons/fi'
 import { Menus } from '../../config/menu'
 
 

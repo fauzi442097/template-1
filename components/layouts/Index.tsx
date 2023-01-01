@@ -11,7 +11,6 @@ import { StringHelper } from '../../helper/helper'
 
 const PageInfo = () => {
     const router = useRouter();
-    console.log(router);
     const path = router.asPath.split("?")[0];
     const pathName = String(path.split('/').pop());
     const pageTitle = pathName == '' ? 'Dashboard' : StringHelper.Capitalize(pathName);
@@ -19,7 +18,7 @@ const PageInfo = () => {
     return (
       <Toolbar>
           <PageTitle> 
-            <h1 className='page-title dark:text-slate-400'> {pageTitle} </h1>
+            <h1 className='page-title dark:text-gray-400'> {pageTitle} </h1>
             <Breadcrumbs/>
           </PageTitle>
         </Toolbar>
@@ -34,7 +33,7 @@ const Layout = ({ children } : {
     <>
       <TagHead/>
       <div className={`flex flex-col flex-1`}>
-        <div className='flex flex-row flex-1 '> 
+        <div className='flex-auto overflow-x-auto'> 
           <Sidebar/>
           <div className='wrapper'> 
           <Header/>

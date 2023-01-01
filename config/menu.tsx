@@ -1,5 +1,5 @@
 import { AiOutlineDashboard } from "react-icons/ai";
-import { FiCrosshair, FiSettings, FiUsers } from "react-icons/fi";
+import { FiCrosshair, FiSettings, FiUsers, FiFileText } from "react-icons/fi";
 
 export const Menus = [
    {
@@ -52,8 +52,26 @@ export const Menus = [
    },
    {
       id: 4,
-      title: 'About',
-      url: '/about',
-      icon: <FiCrosshair />,
+      title: 'Form',
+      url: '/',
+      icon: <FiFileText />,
+      subMenu: [
+         {
+            title: 'Checkbox & Radio',
+            url: '/form/checkbox',
+         },
+         {
+            title: 'Input',
+            url: '/form/input',
+         },
+         {
+            title: 'Input Group',
+            url: '/form/input-group',
+         },
+         {
+            title: 'Textarea',
+            url: '/form/textarea',
+         },
+      ]
    }
 ];

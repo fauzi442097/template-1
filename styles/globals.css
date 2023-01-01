@@ -91,6 +91,12 @@
 		margin-top: 0;
 		margin-bottom: 1rem;
 	}
+
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 }
 
 @layer components {
@@ -294,6 +300,57 @@
 
 	.toast .toast-content .toast-title {
 		@apply mb-1 font-inter-semibold text-base;
+	}
+
+	.form-control {
+		@apply py-2 px-4 rounded-lg bg-white dark:bg-dark-dept-2 border transition-colors duration-300 focus:outline-none 
+		disabled:opacity-50 disabled:cursor-not-allowed 
+		read-only:cursor-not-allowed dark:border-transparent
+		focus:ring-1 focus:ring-red-500 dark:focus:ring-red-900
+		read-only:bg-gray-200 dark:read-only:bg-form-read-only 
+		dark:placeholder:text-gray-400/40 placeholder:text-gray-500/40;
+	}
+
+	.form-control-file {
+		@apply file:mr-4 file:py-2 file:px-4
+      file:rounded-lg file:border-0
+		file:transition-colors file:duration-300
+      file:text-sm hover:file:cursor-pointer
+      file:bg-btn-light-primary file:text-primary
+		dark:file:dark-bg-light-primary
+      hover:file:bg-red-100
+		 dark:file:text-red-800
+		dark:hover:file:enabled:bg-red-900 
+		dark:hover:file:text-gray-300;
+	}
+
+	.form-control.form-invalid {
+		@apply border-red-500 dark:border-red-700 focus:ring-red-500 focus:border-red-500 
+		dark:focus:ring-red-700 dark:focus:border-red-700;
+	}
+
+	.form-invalid-message {
+		@apply text-sm text-red-500 dark:text-red-700;
+	}
+
+	.form-label {
+		@apply mb-2;
+	}
+
+	.form-label .form-label-type {
+		@apply inline-block text-sm font-inter-light;
+	}
+
+	.input-group-right {
+		@apply rounded-tr-none rounded-br-none z-10;
+	}
+
+	.input-group-left {
+		@apply rounded-tl-none rounded-bl-none z-10;
+	}
+
+	.form-check {
+		@apply cursor-pointer appearance-none border h-5 w-5  border-red-500 dark:border-red-800 disabled:opacity-50 disabled:cursor-not-allowed pointer-events-auto disabled:bg-form-check-disabled dark:disabled:bg-dark-form-check-disabled;
 	}
 }
 

@@ -6,6 +6,7 @@ interface childrenProps {
 }
 
 const Card = ({ children, className } : childrenProps) => {
+
   return (
     <div className={`${className || 'bg-white shadow-sm dark:shadow-none dark:bg-dark-dept-1 rounded-xl transition-colors duration-300 relative break-words overflow-auto w-full flex flex-col flex-wrap'} `}>
       {children}

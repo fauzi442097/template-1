@@ -36,6 +36,9 @@ module.exports = {
         "btn-light-primary": "#ffedec",
         "btn-hover-light-primary": "#ffdedb",
         "dark-light-primary": "#b2cebf",
+        "form-read-only": "3c413fba",
+        "form-check-disabled" : "#f2f3f5",
+        "dark-form-check-disabled": "#2c302f",
       },
        fontFamily: {
         "inter-thin": ['var(--font-inter-thin)'],
