@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Card from '../../components/Card'
 import Input from '../../components/Forms/Input'
-import "react-datepicker/dist/react-datepicker.css";
-import InputGroup, { InputGroupText } from '../../components/Forms/InputGroup';
 
 const InputPage = () => {
 
-  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <div className='flex flex-row gap-4 w-full flex-wrap lg:flex-nowrap'>
