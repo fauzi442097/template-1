@@ -1,21 +1,45 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
-import Layout from '../components/layouts/Index'
 import { GlobalContextProvider } from '../context/globalContext'
 import InitialGlobalFont from '../config/font'
+import { SessionProvider } from "next-auth/react"
+import { ReactElement, ReactNode } from 'react'
+import type { NextPage } from 'next'
+import Layout from '../layouts/Admin/Index'
 
-export default function App({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+export default function App({
+  Component,
+  pageProps: { 
+    session, 
+    ...pageProps 
+  },
+} : {
+  Component: any,
+  pageProps: any
+}) {
+
   return (
     <>
-      <InitialGlobalFont/>
-      <ThemeProvider attribute='class'>
-        <GlobalContextProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </GlobalContextProvider>
-      </ThemeProvider>
+        <InitialGlobalFont/>
+        <SessionProvider session={session}>
+        <ThemeProvider attribute='class'>
+          { 
+            Component.getLayout ? (
+                Component.getLayout(<Component {...pageProps} />)
+            ) : (
+              <GlobalContextProvider>
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              </GlobalContextProvider>
+            )
+          }
+        </ThemeProvider>
+        </SessionProvider>
     </>
-  )
+  )  
 }

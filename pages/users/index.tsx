@@ -1,13 +1,16 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
-import Button from '../components/Button';
-import Card from '../components/Card'
-import CheckboxTable from '../components/Table/CheckboxTable';
-import Table from '../components/Table/Index';
-import Loading from '../components/Table/Loading';
+import Button from '../../components/Button';
+import Card from '../../components/Card'
+import CheckboxTable from '../../components/Table/CheckboxTable';
+import Table from '../../components/Table/Index';
+import Loading from '../../components/Table/Loading';
 
 const UsersPage = ({ users } : {
    users: any
 }) => {
+
+   const router = useRouter();
 
 
   const [ listUsers, setListUsers] = useState([]);
@@ -64,7 +67,7 @@ const UsersPage = ({ users } : {
     },
     {
         name: 'Action',
-        cell: (row: any, index: Number, column:Object, id:String) => <Button.Primary className="btn-sm" onClick={() => alert('tes')}> Detail </Button.Primary>,
+        cell: (row: any, index: Number, column:Object, id:String) => <Button.Primary className="btn-sm" onClick={() => router.push(`/users/${row.id}`)}> Detail </Button.Primary>,
         ignoreRowClick: true,
         allowOverflow: true,
         button: true,
@@ -94,15 +97,26 @@ const UsersPage = ({ users } : {
   )
 }
 
-export const getStaticProps = async () => {
-   const res = await fetch('https://dummyjson.com/users');
-   const users = await res.json();
+// export const getStaticProps = async () => {
+//    const res = await fetch('https://dummyjson.com/users');
+//    const users = await res.json();
 
-   return {
-      props: {
-         users
-      }
-   }
+//    return {
+//       props: {
+//          users
+//       }
+//    }
+// }
+
+export const getServerSideProps = async () => {
+    const res = await fetch('https://dummyjson.com/users');
+    const users = await res.json();
+
+    return {
+        props: {
+            users
+        }
+    }
 }
 
 

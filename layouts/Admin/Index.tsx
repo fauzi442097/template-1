@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { Component, ReactElement } from 'react'
 import Content from './Content'
 import Header from './Header/Index'
 import Sidebar from './Sidebar'
@@ -8,6 +8,9 @@ import Breadcrumbs from './Toolbar/Breadcrumb'
 import Toolbar from './Toolbar/Index'
 import PageTitle from './Toolbar/PageTitle'
 import { StringHelper } from '../../helper/helper'
+import { useSession } from 'next-auth/react'
+import { NextPageWithLayout } from '../../pages/_app'
+import { GlobalContextProvider } from '../../context/globalContext'
 
 const PageInfo = () => {
     const router = useRouter();
@@ -28,6 +31,10 @@ const PageInfo = () => {
 const Layout = ({ children } : {
    children: React.ReactNode
 }) => {
+
+  const { status } = useSession();
+  const router = useRouter();
+
 
   return (
     <>
